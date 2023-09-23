@@ -12,4 +12,8 @@ class NotesController < ApplicationController
   def set_note
     @note = Note.find(params[:id])
   end
+
+  def new
+    @note = Note.new
+  end
 end
