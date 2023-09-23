@@ -1,3 +1,4 @@
-<h1><%= @note.title %></h1>
-<%= @note.content %>
-<%= button_to "Destroy this note", note_path(@note), method: :delete %>
+<%= render @note %>
+<p><%= button_to "Destroy this note", note_path(@note), method: :delete %></p>
+<p><%= link_to "Create Note", new_note_path %></p>
+<p><%= link_to "Show all Note", notes_path %></p>
