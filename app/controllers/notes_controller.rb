@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[show]
+  before_action :set_note, only: %i[show edit]
   def index
     @notes = Note.all
   end
@@ -20,6 +20,9 @@ class NotesController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
       end
     end
+  end
+
+  def edit
   end
 
   private
