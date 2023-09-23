@@ -1,2 +1,3 @@
 <h1><%= @note.title %></h1>
 <%= @note.content %>
+<%= button_to "Destroy this note", note_path(@note), method: :delete %>

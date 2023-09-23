@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_note, only: %i[show edit update]
+  before_action :set_note, only: %i[show edit update destroy]
   def index
     @notes = Note.all
   end
@@ -32,6 +32,13 @@ class NotesController < ApplicationController
       else
         format.html { render :edit, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @note.destroy
+    respond_to do |format|
+      format.html { redirect_to notes_url, notice: "Note was successfully destroyed" }
     end
   end
 
