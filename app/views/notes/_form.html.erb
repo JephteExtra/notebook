@@ -9,9 +9,12 @@
     <%= f.rich_text_area :content %>
   </div>
 
-  <div>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-  </div>
+  <!-- Because we use user.notes.builds in the note controller 
+       the following 3 lines of codes are no more needed.
+    <div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    </div>
+  -->
 
   <div>
     <%= f.submit %>
